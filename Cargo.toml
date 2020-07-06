@@ -1,0 +1,27 @@
+[package]
+name = "mailgun-sdk"
+version = "0.1.0"
+authors = ["Ron Rider Jr. <rideron89@gmail.com>"]
+description = "MailGun API client written in Rust."
+license = "MIT"
+readme = "README.md"
+documentation = "https://docs.rs/mailgun-sdk/0.1.0/"
+categories = ["api-bindings"]
+edition = "2018"
+
+# Files to include in the upload to crates.io.
+include = [
+    "**/*.rs",
+    "Cargo.toml",
+    "LICENSE",
+    "README.md",
+]
+
+[dependencies]
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+thiserror = "1.0"
+ureq = "1.3"
+
+[dev-dependencies]
+dotenv = "0.15"
