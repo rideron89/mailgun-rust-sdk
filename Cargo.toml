@@ -1,13 +1,13 @@
 [package]
 name = "mailgun-sdk"
-version = "0.1.0"
+version = "0.1.1"
 authors = ["Ron Rider Jr. <rideron89@gmail.com>"]
 description = "MailGun API client written in Rust."
 license = "MIT"
 readme = "README.md"
 repository = "https://github.com/rideron89/mailgun-rust-sdk"
 homepage = "https://github.com/rideron89/mailgun-rust-sdk"
-documentation = "https://docs.rs/mailgun-sdk/0.1.0/"
+documentation = "https://docs.rs/mailgun-sdk/0.1.1/"
 categories = ["api-bindings"]
 edition = "2018"
 
