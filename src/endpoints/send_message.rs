@@ -152,7 +152,7 @@ impl<'a, T: ?Sized> ParamList for SendMessageParamList<'a, T> where T: serde::Se
 //- Response
 
 /// Response returned by send message endpoint.
-#[derive(Debug, Deserialize)]
+#[derive(Debug, Deserialize, Serialize)]
 pub struct SendMessageResponse {
     pub id: String,
     pub message: String,

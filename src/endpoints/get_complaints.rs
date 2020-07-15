@@ -63,14 +63,14 @@ impl ParamList for GetComplaintsParamList {
 //- Response
 
 /// Response returned by get complaints endpoint.
-#[derive(Debug, Deserialize)]
+#[derive(Debug, Deserialize, Serialize)]
 pub struct GetComplaintsResponse {
     pub items: Vec<ComplaintItem>,
     pub paging: Paging,
 }
 
 /// A single item found in [`GetComplaintsResponse`](struct.GetComplaintsResponse.html).
-#[derive(Debug, Deserialize)]
+#[derive(Debug, Deserialize, Serialize)]
 pub struct ComplaintItem {
     pub address: String,
     pub tag: String,

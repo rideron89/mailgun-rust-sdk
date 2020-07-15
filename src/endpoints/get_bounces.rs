@@ -63,14 +63,14 @@ impl ParamList for GetBouncesParamList {
 //- Response
 
 /// Response returned by get bounces endpoint.
-#[derive(Debug, Deserialize)]
+#[derive(Debug, Deserialize, Serialize)]
 pub struct GetBouncesResponse {
     pub items: Vec<BounceItem>,
     pub paging: Paging,
 }
 
 /// A single item found in [`GetBouncesResponse`](struct.GetBouncesResponse.html).
-#[derive(Debug, Deserialize)]
+#[derive(Debug, Deserialize, Serialize)]
 pub struct BounceItem {
     pub address: String,
     pub code: String,

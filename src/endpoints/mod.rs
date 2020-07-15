@@ -9,7 +9,7 @@ pub mod get_whitelists;
 pub mod send_message;
 
 /// Structure of pagination data returned by some API endpoints.
-#[derive(Debug, Deserialize)]
+#[derive(Debug, Deserialize, Serialize)]
 pub struct Paging {
     pub first: Option<String>,
     pub next: String,

@@ -82,7 +82,7 @@ impl<'a> ParamList for GetStatsParamList<'a> {
 //- Response
 
 /// Response returned by get stats endpoint.
-#[derive(Debug, Deserialize)]
+#[derive(Debug, Deserialize, Serialize)]
 pub struct GetStatsResponse {
     end: String,
     resolution: String,
@@ -91,7 +91,7 @@ pub struct GetStatsResponse {
 }
 
 /// A single item found in [`GetStatsResponse`](struct.GetStatsResponse.html).
-#[derive(Debug, Deserialize)]
+#[derive(Debug, Deserialize, Serialize)]
 pub struct StatItem {
     time: String,
     accepted: StatAccepted,
@@ -100,7 +100,7 @@ pub struct StatItem {
 }
 
 /// A single accepted item found in [`StatItem`](struct.StatItem.html).
-#[derive(Debug, Deserialize)]
+#[derive(Debug, Deserialize, Serialize)]
 pub struct StatAccepted {
     outgoing: i64,
     incoming: i64,
@@ -108,7 +108,7 @@ pub struct StatAccepted {
 }
 
 /// A single delivered item found in [`StatItem`](struct.StatItem.html).
-#[derive(Debug, Deserialize)]
+#[derive(Debug, Deserialize, Serialize)]
 pub struct StatDelivered {
     smtp: i64,
     http: i64,
@@ -116,14 +116,14 @@ pub struct StatDelivered {
 }
 
 /// A single failed item found in [`StatItem`](struct.StatItem.html).
-#[derive(Debug, Deserialize)]
+#[derive(Debug, Deserialize, Serialize)]
 pub struct StatFailed {
     permanent: StatFailedPermanent,
     temporary: StatFailedTemporary,
 }
 
 /// A single failed permanent item found in [`StatFailed`](struct.StatFailed.html).
-#[derive(Debug, Deserialize)]
+#[derive(Debug, Deserialize, Serialize)]
 #[serde(rename_all = "kebab-case")]
 pub struct StatFailedPermanent {
     bounce: i64,
@@ -135,7 +135,7 @@ pub struct StatFailedPermanent {
 }
 
 /// A single failed temporary item found in [`StatFailed`](struct.StatFailed.html).
-#[derive(Debug, Deserialize)]
+#[derive(Debug, Deserialize, Serialize)]
 pub struct StatFailedTemporary {
     espblock: i64,
 }

@@ -118,14 +118,14 @@ impl<'a> ParamList for GetEventsParamList<'a> {
 //- Response
 
 /// Response returned by get events endpoint.
-#[derive(Debug, Deserialize)]
+#[derive(Debug, Deserialize, Serialize)]
 pub struct GetEventsResponse {
     pub items: Vec<EventItem>,
     pub paging: Paging,
 }
 
 /// A single item found in [`GetEventsResponse`](struct.GetEventsResponse.html).
-#[derive(Debug, Deserialize)]
+#[derive(Debug, Deserialize, Serialize)]
 #[serde(rename_all = "kebab-case")]
 pub struct EventItem {
     pub event: String,
@@ -151,7 +151,7 @@ pub struct EventItem {
 }
 
 /// A single envelope item found in [`EventItem`](struct.EventItem.html).
-#[derive(Debug, Deserialize)]
+#[derive(Debug, Deserialize, Serialize)]
 pub struct EventEnvelope {
     pub targets: String,
     pub transport: String,
@@ -159,7 +159,7 @@ pub struct EventEnvelope {
 }
 
 /// A single event flag item found in [`EventItem`](struct.EventItem.html).
-#[derive(Debug, Deserialize)]
+#[derive(Debug, Deserialize, Serialize)]
 #[serde(rename_all = "kebab-case")]
 pub struct EventFlags {
     pub is_authenticated: Option<bool>,
@@ -170,14 +170,14 @@ pub struct EventFlags {
 }
 
 /// A single event reject item found in [`EventItem`](struct.EventItem.html).
-#[derive(Debug, Deserialize)]
+#[derive(Debug, Deserialize, Serialize)]
 pub struct EventReject {
     pub reason: Option<String>,
     pub description: Option<String>,
 }
 
 /// A single event delivery status item found in [`EventItem`](struct.EventItem.html).
-#[derive(Debug, Deserialize)]
+#[derive(Debug, Deserialize, Serialize)]
 #[serde(rename_all = "kebab-case")]
 pub struct EventDeliveryStatus {
     pub tls: Option<bool>,
@@ -192,7 +192,7 @@ pub struct EventDeliveryStatus {
 }
 
 /// A single event message item found in [`EventItem`](struct.EventItem.html).
-#[derive(Debug, Deserialize)]
+#[derive(Debug, Deserialize, Serialize)]
 pub struct EventMessage {
     pub headers: Option<EventMessageHeader>,
     pub attachments: Option<Vec<EventMessageAttachment>>,
@@ -201,7 +201,7 @@ pub struct EventMessage {
 }
 
 /// A single event message header item found in [`EventMessage`](struct.EventMessage.html).
-#[derive(Debug, Deserialize)]
+#[derive(Debug, Deserialize, Serialize)]
 #[serde(rename_all = "kebab-case")]
 pub struct EventMessageHeader {
     pub to: Option<String>,
@@ -211,7 +211,7 @@ pub struct EventMessageHeader {
 }
 
 /// A single event message attachment item found in [`EventMessage`](struct.EventMessage.html).
-#[derive(Debug, Deserialize)]
+#[derive(Debug, Deserialize, Serialize)]
 #[serde(rename_all = "kebab-case")]
 pub struct EventMessageAttachment {
     pub size: Option<i64>,
@@ -220,14 +220,14 @@ pub struct EventMessageAttachment {
 }
 
 /// A single event storage item found in [`EventItem`](struct.EventItem.html).
-#[derive(Debug, Deserialize)]
+#[derive(Debug, Deserialize, Serialize)]
 pub struct EventStorage {
     pub url: String,
     pub key: String,
 }
 
 /// A single event geolocation item found in [`EventItem`](struct.EventItem.html).
-#[derive(Debug, Deserialize)]
+#[derive(Debug, Deserialize, Serialize)]
 pub struct EventGeolocation {
     pub country: String,
     pub region: String,
@@ -235,7 +235,7 @@ pub struct EventGeolocation {
 }
 
 /// A single event client info item found in [`EventItem`](struct.EventItem.html).
-#[derive(Debug, Deserialize)]
+#[derive(Debug, Deserialize, Serialize)]
 #[serde(rename_all = "kebab-case")]
 pub struct EventClientInfo {
     pub client_type: Option<String>,

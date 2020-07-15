@@ -63,14 +63,14 @@ impl ParamList for GetWhitelistsParamList {
 //- Response
 
 /// Response returned by get whitelist records endpoint.
-#[derive(Debug, Deserialize)]
+#[derive(Debug, Deserialize, Serialize)]
 pub struct GetWhitelistsResponse {
     pub items: Vec<WhitelistItem>,
     pub paging: Paging,
 }
 
 /// A single item found in [`GetWhitelistsResponse`](struct.GetWhitelistsResponse.html).
-#[derive(Debug, Deserialize)]
+#[derive(Debug, Deserialize, Serialize)]
 #[serde(rename_all = "camelCase")]
 pub struct WhitelistItem {
     pub value: String,

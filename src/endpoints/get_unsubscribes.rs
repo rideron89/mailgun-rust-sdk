@@ -63,14 +63,14 @@ impl ParamList for GetUnsubscribesParamList {
 //- Response
 
 /// Response returned by get unsubscribes endpoint.
-#[derive(Debug, Deserialize)]
+#[derive(Debug, Deserialize, Serialize)]
 pub struct GetUnsubscribesResponse {
     pub items: Vec<UnsubscribeItem>,
     pub paging: Paging,
 }
 
 /// A single item found in [`GetUnsubscribesResponse`](struct.GetUnsubscribesResponse.html).
-#[derive(Debug, Deserialize)]
+#[derive(Debug, Deserialize, Serialize)]
 pub struct UnsubscribeItem {
     pub address: String,
     pub tag: String,
